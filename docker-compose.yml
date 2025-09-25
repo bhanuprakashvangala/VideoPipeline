@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  video-pipeline:
+    build: .
+    image: vangalabhanuprakash/video-pipeline:latest
+    container_name: video-pipeline-container
+    ports:
+      - "8888:8888"
+    volumes:
+      # Mount local directory for development
+      - ./notebooks:/app/notebooks
+      - ./results:/app/results
+      # Optional: Mount larger datasets from host
+      # - ./MOT17:/app/MOT17
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - PYTHONUNBUFFERED=1
+    # Use GPU if available
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+    # Override command if needed
+    # command: python video_pipeline.py

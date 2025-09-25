@@ -1,0 +1,4 @@
+Pipeline Configuration,Object Detection,Tracking Algorithm,Latency (seconds),Total Objects,Tracking Accuracy,Valid Transitions,Avg Confidence
+DETR + OC-SORT,facebook/detr-resnet-50,OC-SORT,12.66,2701,1.0,2641/2641,0.745
+YOLOv8 + OC-SORT,YOLOv8-nano,OC-SORT,3.89,1452,1.0,1425/1425,0.543
+FasterRCNN + OC-SORT,fasterrcnn_resnet50_fpn,OC-SORT,7.16,3276,1.0,3202/3202,0.734
