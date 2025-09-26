@@ -2,7 +2,8 @@
 # Author: Bhanuprakash Vangala
 # Docker Hub: vangalabhanuprakash/video-pipeline
 
-FROM pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime
+# FROM pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime
+FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -35,7 +36,9 @@ COPY requirements-video.txt .
 RUN pip install --upgrade pip && \
     pip install numpy>=2.0.0 && \
     pip install scipy filterpy && \
-    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121 && \
+    pip install timm && \
+    # pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121 && \    
+    pip install torch==2.5.1+cu124 torchvision==0.20.1+cu124 --index-url https://download.pytorch.org/whl/cu124 && \    
     pip install transformers ultralytics opencv-python Pillow pandas matplotlib && \
     pip install jupyterlab notebook ipywidgets
 
