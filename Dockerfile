@@ -41,7 +41,8 @@ RUN pip install --upgrade pip && \
 
 # Copy project files
 COPY README.md .
-COPY video_pipeline_complete.ipynb .
+# COPY video_pipeline_complete.ipynb .
+COPY complete_video_pipeline.ipynb .
 
 # Copy MOT17 dataset (only the single sequence we're using)
 COPY MOT17/train/MOT17-04-DPM/ /app/MOT17/train/MOT17-04-DPM/
