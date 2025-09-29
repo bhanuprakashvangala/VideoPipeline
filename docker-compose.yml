@@ -3,7 +3,8 @@ version: '3.8'
 services:
   video-pipeline:
     build: .
-    image: vangalabhanuprakash/video-pipeline:latest
+    # image: vangalabhanuprakash/video-pipeline:latest
+    image: nolvic/video-pipeline:latest
     container_name: video-pipeline-container
     ports:
       - "8888:8888"
