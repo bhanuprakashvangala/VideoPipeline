@@ -13,8 +13,9 @@ LABEL version="1.0"
 WORKDIR /app
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
+RUN apt-get update && \
+    (apt-get install -y libgl1-mesa-glx || apt-get install -y libgl1) && \ 
+    apt-get install -y \
     libglib2.0-0 \
     libsm6 \
     libxext6 \
