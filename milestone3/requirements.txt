@@ -1,0 +1,35 @@
+# Milestone 3 Requirements
+# INFaaS Optimizer + Agentic Framework + Assertions
+
+# Core ML
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0
+
+# Image/Video Processing
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Scientific Computing
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Optimization (ILP Solver)
+PuLP>=2.7.0
+
+# LLM API (for Agentic Framework)
+requests>=2.31.0
+pyyaml>=6.0.0
+
+# Jupyter
+jupyter>=1.0.0
+nbconvert>=7.0.0
+ipykernel>=6.0.0
+
+# Profiling
+psutil>=5.9.0

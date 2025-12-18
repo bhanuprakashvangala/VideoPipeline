@@ -1,0 +1,56 @@
+
+syntax = "proto3";
+
+package videopipeline;
+
+// Detection Service
+service DetectionService {
+  rpc DetectObjects(DetectionRequest) returns (DetectionResponse) {}
+  rpc DetectObjectsBatch(DetectionBatchRequest) returns (stream DetectionResponse) {}
+}
+
+message DetectionRequest {
+  bytes image_data = 1;
+  int32 frame_id = 2;
+  float confidence_threshold = 3;
+}
+
+message DetectionBatchRequest {
+  repeated DetectionRequest requests = 1;
+}
+
+message BoundingBox {
+  float x1 = 1;
+  float y1 = 2;
+  float x2 = 3;
+  float y2 = 4;
+  float confidence = 5;
+  int32 class_id = 6;
+}
+
+message DetectionResponse {
+  int32 frame_id = 1;
+  repeated BoundingBox detections = 2;
+  float inference_time_ms = 3;
+}
+
+// Tracking Service
+service TrackingService {
+  rpc TrackObjects(TrackingRequest) returns (TrackingResponse) {}
+}
+
+message TrackingRequest {
+  int32 frame_id = 1;
+  repeated BoundingBox detections = 2;
+}
+
+message TrackedObject {
+  int32 track_id = 1;
+  BoundingBox bbox = 2;
+}
+
+message TrackingResponse {
+  int32 frame_id = 1;
+  repeated TrackedObject tracked_objects = 2;
+  float tracking_time_ms = 3;
+}

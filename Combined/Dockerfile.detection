@@ -1,0 +1,35 @@
+
+# Dockerfile for Detection Service
+FROM python:3.10-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements
+COPY requirements-video.txt .
+RUN pip install --no-cache-dir -r requirements-video.txt
+
+# Install gRPC
+RUN pip install grpcio grpcio-tools
+
+# Copy model files
+COPY yolov8*.pt .
+
+# Copy service code
+COPY detection_service.py .
+COPY detection_pb2.py detection_pb2_grpc.py .
+
+# Expose gRPC port
+EXPOSE 50051
+
+# Set environment variable for model variant
+ENV MODEL_VARIANT=yolov8n
+
+# Run detection service
+CMD ["python", "detection_service.py"]

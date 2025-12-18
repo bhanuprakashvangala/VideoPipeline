@@ -1,0 +1,24 @@
+# Milestone 1 Requirements
+# Video Analytics Pipeline - Detection + Tracking
+
+# Core ML
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0
+
+# Image/Video Processing
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Scientific Computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Jupyter
+jupyter>=1.0.0
+nbconvert>=7.0.0
+ipykernel>=6.0.0

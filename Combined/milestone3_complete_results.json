@@ -1,0 +1,79 @@
+{
+  "T1_accuracy": {
+    "detection": 0.7119645708639034,
+    "tracking": 1.0,
+    "consistency": 0.8794957366834513,
+    "combined": 0.8606849756822517
+  },
+  "assertions": {
+    "distance": {
+      "total": 1191,
+      "passed": 1191,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "bbox_size": {
+      "total": 1191,
+      "passed": 1189,
+      "failed": 2,
+      "pass_rate": 0.998320738874895
+    },
+    "confidence": {
+      "total": 1221,
+      "passed": 1221,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "continuity": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "stability": {
+      "total": 49,
+      "passed": 49,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "iou": {
+      "total": 1191,
+      "passed": 1191,
+      "failed": 0,
+      "pass_rate": 1.0
+    }
+  },
+  "T3_optimization": {
+    "rule_based_low_load": {
+      "variant": "yolov8n",
+      "batch": 8,
+      "replicas": 1,
+      "latency": 323.0,
+      "throughput": 37.64705882352941,
+      "accuracy": 0.8606849756822517,
+      "cost": 1.0,
+      "sla_ok": true
+    },
+    "rule_based_normal": {
+      "variant": "yolov8n",
+      "batch": 8,
+      "replicas": 1,
+      "latency": 323.0,
+      "throughput": 37.64705882352941,
+      "accuracy": 0.8606849756822517,
+      "cost": 1.0,
+      "sla_ok": true
+    },
+    "rule_based_high_load": {
+      "variant": "yolov8n",
+      "batch": 8,
+      "replicas": 10,
+      "latency": 102.14156842343864,
+      "throughput": 376.47058823529414,
+      "accuracy": 0.8606849756822517,
+      "cost": 10.0,
+      "sla_ok": true
+    }
+  },
+  "T4_agentic_decisions": 1
+}

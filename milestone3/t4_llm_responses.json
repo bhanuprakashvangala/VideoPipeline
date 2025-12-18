@@ -1,0 +1,27 @@
+[
+  {
+    "frame": 0,
+    "response": "ACTION: MAINTAIN\nREASON: Latency is within SLA and load is moderate. No immediate action needed.\nCONFIG: yolov8s, batch=1, replicas=1",
+    "latency": 2621.5038299560547
+  },
+  {
+    "frame": 10,
+    "response": "ACTION: MAINTAIN\nREASON: Latency is well within SLA, and load is high but not critically so. No immediate action needed.\nCONFIG: yolov8s, batch=1, replicas=1\n",
+    "latency": 2915.1878356933594
+  },
+  {
+    "frame": 20,
+    "response": "ACTION: MAINTAIN\nREASON: Latency is well within SLA, and load is at maximum. No immediate action needed.\nCONFIG: yolov8n, batch=1, replicas=1",
+    "latency": 2748.3394145965576
+  },
+  {
+    "frame": 30,
+    "response": "ACTION: MAINTAIN\nREASON: Latency is well within SLA and load is at maximum. No immediate action needed.\nCONFIG: yolov8n, batch=1, replicas=1",
+    "latency": 2503.424882888794
+  },
+  {
+    "frame": 40,
+    "response": "ACTION: MAINTAIN\nREASON: Latency is well within SLA, and load is high but not critically so. No immediate action needed.\nCONFIG: yolov8s, batch=2, replicas=2\n",
+    "latency": 2781.156539916992
+  }
+]
